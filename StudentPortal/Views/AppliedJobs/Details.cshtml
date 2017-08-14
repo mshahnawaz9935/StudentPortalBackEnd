@@ -1,0 +1,50 @@
+﻿@model StudentPortal.Models.AppliedJobs
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AppliedJobs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.studentid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.studentid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.companyid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.companyid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jobid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.applydate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.applydate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

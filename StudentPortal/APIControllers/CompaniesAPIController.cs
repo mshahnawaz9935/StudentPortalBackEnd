@@ -9,13 +9,14 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using StudentPortal.Models;
+using System.Web.Http.Cors;
 
 namespace StudentPortal.APIControllers
 {
     public class CompaniesAPIController : ApiController
     {
         private StudentPortalContext db = new StudentPortalContext();
-
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         // GET: api/CompaniesAPI
         public IQueryable<Company> GetCompanies()
         {

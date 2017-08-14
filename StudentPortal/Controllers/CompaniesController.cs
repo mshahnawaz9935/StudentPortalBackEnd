@@ -7,14 +7,17 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using StudentPortal.Models;
+using System.Web.Http.Cors;
 
 namespace StudentPortal.Controllers
 {
     public class CompaniesController : Controller
     {
+       
         private StudentPortalContext db = new StudentPortalContext();
 
         // GET: Companies
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         public ActionResult Index()
         {
             return View(db.Companies.ToList());

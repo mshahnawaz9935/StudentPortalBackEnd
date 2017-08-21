@@ -13,6 +13,7 @@ using System.Web.Http.Cors;
 
 namespace StudentPortal.APIControllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class JobsAPIController : ApiController
     {
         private StudentPortalContext db = new StudentPortalContext();

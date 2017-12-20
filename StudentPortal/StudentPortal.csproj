@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -65,6 +66,8 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
     </Reference>
@@ -120,6 +123,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\JobsIE\JobWS.disco" />
+    <None Include="Connected Services\JobsIE\configuration91.svcinfo" />
+    <None Include="Connected Services\JobsIE\configuration.svcinfo" />
+    <None Include="Connected Services\JobsIE\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -128,6 +138,61 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Connected Services\JobsIE\JobWS.wsdl" />
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.AddressRegion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.Country.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.CreateJobResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.EmployerStatsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.ExpireJobsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.GetAddressRegionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.GetCountriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.GetIndustriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.GetJobCategoriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.GetJobRegionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.Industry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.JobCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.JobDisplay.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.JobListItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.JobRegion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.RefreshResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.SearchJobsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\JobsIE\StudentPortal.JobsIE.UpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -139,16 +204,26 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIControllers\AppliedJobsAPIController.cs" />
     <Compile Include="APIControllers\CompaniesAPIController.cs" />
     <Compile Include="APIControllers\JobsAPIController.cs" />
+    <Compile Include="APIControllers\StudentsAPIController.cs" />
+    <Compile Include="APIControllers\UsersAPIController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Connected Services\JobsIE\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AppliedJobsController.cs" />
     <Compile Include="Controllers\CompaniesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -174,12 +249,21 @@
     <Compile Include="Migrations\201708141551487_Fourth.Designer.cs">
       <DependentUpon>201708141551487_Fourth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710050328189_Fifth.cs" />
+    <Compile Include="Migrations\201710050328189_Fifth.Designer.cs">
+      <DependentUpon>201710050328189_Fifth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710050329362_Fifth1.cs" />
+    <Compile Include="Migrations\201710050329362_Fifth1.Designer.cs">
+      <DependentUpon>201710050329362_Fifth1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppliedJobs.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentPortalContext.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +292,7 @@
     <Content Include="Views\AppliedJobs\Details.cshtml" />
     <Content Include="Views\AppliedJobs\Edit.cshtml" />
     <Content Include="Views\AppliedJobs\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -234,6 +319,18 @@
     <EmbeddedResource Include="Migrations\201708141551487_Fourth.resx">
       <DependentUpon>201708141551487_Fourth.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710050328189_Fifth.resx">
+      <DependentUpon>201710050328189_Fifth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710050329362_Fifth1.resx">
+      <DependentUpon>201710050329362_Fifth1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\JobsIE\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -13,11 +13,10 @@ using System.Web.Http.Cors;
 
 namespace StudentPortal.APIControllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+
     public class JobsAPIController : ApiController
     {
         private StudentPortalContext db = new StudentPortalContext();
-        [EnableCors(origins: "*", headers: "*", methods: "*")]
         // GET: api/JobsAPI
         public IQueryable<Job> GetJobs()
         {

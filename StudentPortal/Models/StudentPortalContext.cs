@@ -26,5 +26,6 @@ namespace StudentPortal.Models
         public System.Data.Entity.DbSet<StudentPortal.Models.Job> Jobs { get; set; }
 
         public System.Data.Entity.DbSet<StudentPortal.Models.AppliedJobs> AppliedJobs { get; set; }
+        public System.Data.Entity.DbSet<StudentPortal.Models.User> Users { get; set; }
     }
 }

@@ -31,13 +31,21 @@ namespace StudentPortalAPI.Models
 
         public string Name { get; set; }
 
-        public string PhoneNumber { get; set; }
-
         public string Address { get; set; }
+
+        public string PhoneNumber { get; set; }
 
         public bool HasRegistered { get; set; }
 
         public string LoginProvider { get; set; }
+    }
+    public class EditProfileBindingModel
+    {
+        public string Name { get; set; }
+
+        public string Address { get; set; }
+
+        public string PhoneNumber { get; set; }
     }
 
     public class UserLoginInfoViewModel

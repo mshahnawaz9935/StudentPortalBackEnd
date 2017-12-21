@@ -17,9 +17,11 @@ using StudentPortalAPI.Models;
 using StudentPortalAPI.Providers;
 using StudentPortalAPI.Results;
 using System.Web.Http.Cors;
+using System.Data.Entity;
 
 namespace StudentPortalAPI.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     [Authorize]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
@@ -55,16 +57,55 @@ namespace StudentPortalAPI.Controllers
         // GET api/Account/UserInfo
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("UserInfo")]
-        public UserInfoViewModel GetUserInfo()
+        public async Task<UserInfoViewModel> GetUserInfo()
         {
             ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
+            ApplicationUser user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
 
             return new UserInfoViewModel
             {
                 Email = User.Identity.GetUserName(),
+                Name = user.Name,
+                PhoneNumber = user.PhoneNumber,
+                Address = user.Address,
                 HasRegistered = externalLogin == null,
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
+        }
+        // POST api/Account/EditProfile
+        [Route("EditProfile")]
+        public async Task<IHttpActionResult> EditProfile(EditProfileBindingModel model)
+        {
+           
+            if (!ModelState.IsValid || model == null)
+            {
+                return BadRequest(ModelState);
+            }
+            var userStore = new UserStore<ApplicationUser>(new
+                               ApplicationDbContext());
+            var appManager = new UserManager<ApplicationUser>(userStore);
+               var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+
+      
+                user.Address = model.Address;
+                user.Name = model.Name;
+                user.PhoneNumber = model.PhoneNumber;
+
+
+            var result = await UserManager.UpdateAsync(user);
+
+
+            //   IdentityResult result = await UserManager.FindByIdAsync(user, model.Password);
+
+            if (!result.Succeeded)
+            {
+                return GetErrorResult(result);
+            }
+
+
+            var ctx = userStore.Context.SaveChanges();
+            return Ok();
+
         }
 
         // POST api/Account/Logout

@@ -132,3 +132,6 @@ C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\Stud
 C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.dll
 C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.pdb
 C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.Migrations.third.resources
+C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.Migrations.Role.resources
+C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.Migrations.Company.resources
+C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.Migrations.Company2.resources

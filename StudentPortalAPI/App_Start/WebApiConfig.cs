@@ -31,6 +31,11 @@ namespace StudentPortalAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            config.Routes.MapHttpRoute(
+                  name: "DefaultApi1",
+                  routeTemplate: "api/{controller}/{action}/{emp_id}",
+                  defaults: new { emp_id = RouteParameter.Optional }
+             );
         }
     }
 }

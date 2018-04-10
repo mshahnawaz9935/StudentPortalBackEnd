@@ -64,10 +64,12 @@ namespace StudentPortalAPI.Controllers
 
             return new UserInfoViewModel
             {
+                Id = user.Id,
                 Email = User.Identity.GetUserName(),
                 Name = user.Name,
                 PhoneNumber = user.PhoneNumber,
                 Address = user.Address,
+                Role = user.Role,
                 HasRegistered = externalLogin == null,
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
@@ -370,7 +372,7 @@ namespace StudentPortalAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email, Role = model.Role };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 

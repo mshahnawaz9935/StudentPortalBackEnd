@@ -11,6 +11,7 @@ namespace StudentPortalAPI.Models
     {
         public string Name { get; set; }
         public string Address { get; set; }
+        public string Role { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

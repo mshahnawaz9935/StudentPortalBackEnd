@@ -10,5 +10,7 @@ namespace StudentPortalAPI.Models
         public int id { get; set; }
         public string name { get; set; }
         public string email { get; set; }
+        public string about { get; set;}
+        public string Emp_Id { get; set; }
     }
 }

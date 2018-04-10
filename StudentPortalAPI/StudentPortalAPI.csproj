@@ -234,7 +234,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppliedJobsAPIController.cs" />
+    <Compile Include="Controllers\CompaniesAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobsAPIController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -250,6 +253,18 @@
     <Compile Include="Migrations\201712190752491_third.cs" />
     <Compile Include="Migrations\201712190752491_third.Designer.cs">
       <DependentUpon>201712190752491_third.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802242110453_Role.cs" />
+    <Compile Include="Migrations\201802242110453_Role.Designer.cs">
+      <DependentUpon>201802242110453_Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802260500464_Company.cs" />
+    <Compile Include="Migrations\201802260500464_Company.Designer.cs">
+      <DependentUpon>201802260500464_Company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802260504335_Company2.cs" />
+    <Compile Include="Migrations\201802260504335_Company2.Designer.cs">
+      <DependentUpon>201802260504335_Company2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -349,6 +364,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712190752491_third.resx">
       <DependentUpon>201712190752491_third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802242110453_Role.resx">
+      <DependentUpon>201802242110453_Role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802260500464_Company.resx">
+      <DependentUpon>201802260500464_Company.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802260504335_Company2.resx">
+      <DependentUpon>201802260504335_Company2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

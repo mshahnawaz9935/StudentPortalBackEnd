@@ -35,6 +35,20 @@ namespace StudentPortalAPI.Controllers
             return Ok(job);
         }
 
+        // GET: api/JobsAPI/CompanyId
+        [HttpGet]
+        [ResponseType(typeof(Job))]
+        public IHttpActionResult GetJobByCompany(int id1)
+        {
+            Job job = db.Jobs.Where(b => b.companyid == id1).FirstOrDefault();
+            if (job == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(job);
+        }
+
         // PUT: api/JobsAPI/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutJob(int id, Job job)

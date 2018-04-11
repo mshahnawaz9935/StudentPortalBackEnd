@@ -7,11 +7,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using StudentPortalAPI.Models;
 
 namespace StudentPortalAPI.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class JobsAPIController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -36,11 +38,10 @@ namespace StudentPortalAPI.Controllers
         }
 
         // GET: api/JobsAPI/CompanyId
-        [HttpGet]
         [ResponseType(typeof(Job))]
         public IHttpActionResult GetJobByCompany(int id1)
         {
-            Job job = db.Jobs.Where(b => b.companyid == id1).FirstOrDefault();
+            IEnumerable<Job> job = db.Jobs.Where(b => b.companyid == id1);
             if (job == null)
             {
                 return NotFound();

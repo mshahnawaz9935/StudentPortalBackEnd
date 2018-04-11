@@ -39,9 +39,9 @@ namespace StudentPortalAPI.Controllers
 
         // GET: api/CompaniesAPI/GetCompany_ByEmp_Id/asdfghjk
         [ResponseType(typeof(Company))]
-        public IHttpActionResult GetCompany_ByEmp_Id(string emp_id)
+        public IHttpActionResult GetCompany_ByEmp_Id(string id1)
         {
-            Company company = db.Companies.Where(s => s.Emp_Id == emp_id).FirstOrDefault();
+            Company company = db.Companies.Where(s => s.Emp_Id == id1).FirstOrDefault();
             if (company == null)
             {
                 return NotFound();

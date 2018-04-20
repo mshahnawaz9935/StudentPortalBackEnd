@@ -8,10 +8,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Mvc;
 using StudentPortalAPI.Models;
 
 namespace StudentPortalAPI.Controllers
 {
+  //  [System.Web.Http.Authorize(Roles ="Student")]
     public class AppliedJobsAPIController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();

@@ -1,13 +1,16 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <base href="/">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="import" href="~/Scripts/dist/index.html" />
 </head>
 <body>
+    <app-root>Loading..</app-root>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">

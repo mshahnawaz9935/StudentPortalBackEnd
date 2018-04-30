@@ -22,7 +22,7 @@ using System.Data.Entity;
 namespace StudentPortalAPI.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    [Authorize]
+   // [Authorize]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
@@ -74,6 +74,27 @@ namespace StudentPortalAPI.Controllers
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
         }
+
+        [Route("GetUserProfile/{id1}")]
+        [HttpGet]
+        public async Task<UserInfoViewModel> GetUserProfile(string id1)
+        {
+            ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
+            ApplicationUser user = await UserManager.FindByIdAsync(id1);
+
+            return new UserInfoViewModel
+            {
+                Id = user.Id,
+                Email = User.Identity.GetUserName(),
+                Name = user.Name,
+                PhoneNumber = user.PhoneNumber,
+                Address = user.Address,
+                Role = user.Role,
+                HasRegistered = externalLogin == null,
+                LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
+            };
+        }
+
         // POST api/Account/EditProfile
         [Route("EditProfile")]
         public async Task<IHttpActionResult> EditProfile(EditProfileBindingModel model)
@@ -95,7 +116,6 @@ namespace StudentPortalAPI.Controllers
 
 
             var result = await UserManager.UpdateAsync(user);
-
 
             //   IdentityResult result = await UserManager.FindByIdAsync(user, model.Password);
 

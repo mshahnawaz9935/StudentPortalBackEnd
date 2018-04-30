@@ -238,15 +238,7 @@ var AppliedjobsComponent = (function () {
         var _this = this;
         this.http = http;
         this.data = [];
-<<<<<<< HEAD
-        this.http.get('https://stubuzzportal.azurewebsites.netapi/AppliedJobsAPI')
-            .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
-            _this.applied = Serverdata;
-            _this.http.get('https://stubuzzportal.azurewebsites.netapi/JobsAPI')
-                .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
-                _this.jobs = Serverdata;
-                _this.http.get('https://stubuzzportal.azurewebsites.netapi/CompaniesAPI')
-=======
+
         this.http.get('https://stubuzzportal.azurewebsites.net/api/AppliedJobsAPI')
             .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
             _this.applied = Serverdata;
@@ -254,7 +246,6 @@ var AppliedjobsComponent = (function () {
                 .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
                 _this.jobs = Serverdata;
                 _this.http.get('https://stubuzzportal.azurewebsites.net/api/CompaniesAPI')
->>>>>>> 017240135bfd8e29a69066e2b1f10723fca33803
                     .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
                     _this.companies = Serverdata;
                     _this.getdetails(_this.applied, _this.jobs, _this.companies);
@@ -345,11 +336,8 @@ var CandidatesComponent = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Bearer ' + this.DataService.access_token + '' });
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-<<<<<<< HEAD
-        this.http.get('https://stubuzzportal.azurewebsites.netapi/Account/UserInfo', options)
-=======
+
         this.http.get('https://stubuzzportal.azurewebsites.net/api/Account/UserInfo', options)
->>>>>>> 017240135bfd8e29a69066e2b1f10723fca33803
             .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
             console.log('Profile Data is ' + Serverdata, Serverdata.Id);
             _this.profile1 = Serverdata;
@@ -445,11 +433,8 @@ var CompaniesComponent = (function () {
         console.log(bodyString);
         var headers = new __WEBPACK_IMPORTED_MODULE_6__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         var options = new __WEBPACK_IMPORTED_MODULE_6__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-<<<<<<< HEAD
-        this.http.post('https://stubuzzportal.azurewebsites.netapi/CompaniesAPI', this.body, options) // ...using post request
-=======
+
         this.http.post('https://stubuzzportal.azurewebsites.net/api/CompaniesAPI', this.body, options) // ...using post request
->>>>>>> 017240135bfd8e29a69066e2b1f10723fca33803
             .map(function (res) { return res.json(); }) // ...and calling .json() on the response to return data
             .catch(function (error) { return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(error.json().error || 'Server error'); })
             .subscribe(function (Serverdata) {
@@ -461,11 +446,7 @@ var CompaniesComponent = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_6__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Bearer ' + this.DataService.access_token + '' });
         var options = new __WEBPACK_IMPORTED_MODULE_6__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-<<<<<<< HEAD
-        this.http.get('https://stubuzzportal.azurewebsites.netapi/CompaniesAPI/GetCompany_ByEmp_Id/' + Emp_Id, options)
-=======
         this.http.get('https://stubuzzportal.azurewebsites.net/api/CompaniesAPI/GetCompany_ByEmp_Id/' + Emp_Id, options)
->>>>>>> 017240135bfd8e29a69066e2b1f10723fca33803
             .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
             console.log('Profile Data is ' + Serverdata, Serverdata.Id);
             _this.company1 = Serverdata;
@@ -479,11 +460,8 @@ var CompaniesComponent = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_6__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Bearer ' + this.DataService.access_token + '' });
         var options = new __WEBPACK_IMPORTED_MODULE_6__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-<<<<<<< HEAD
-        this.http.get('https://stubuzzportal.azurewebsites.netapi/JobsAPI/GetJobByCompany/' + this.company_id, options)
-=======
+
         this.http.get('https://stubuzzportal.azurewebsites.net/api/JobsAPI/GetJobByCompany/' + this.company_id, options)
->>>>>>> 017240135bfd8e29a69066e2b1f10723fca33803
             .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
             console.log('Jobs Data is ' + Serverdata);
             _this.jobsdata = Serverdata;
@@ -494,11 +472,8 @@ var CompaniesComponent = (function () {
     };
     CompaniesComponent.prototype.deletejobs = function (id) {
         var _this = this;
-<<<<<<< HEAD
-        this.http.delete('https://stubuzzportal.azurewebsites.netapi/JobsAPI/' + id).map(function (response) { return response.json(); }).subscribe(function (data) {
-=======
+
         this.http.delete('https://stubuzzportal.azurewebsites.net/api/JobsAPI/' + id).map(function (response) { return response.json(); }).subscribe(function (data) {
->>>>>>> 017240135bfd8e29a69066e2b1f10723fca33803
             console.log('Jobs Deleted status is ' + data);
             _this.status = data;
         });
@@ -588,19 +563,12 @@ var JobsComponent = (function () {
     function JobsComponent(http) {
         var _this = this;
         this.http = http;
-<<<<<<< HEAD
-        this.http.get('https://stubuzzportal.azurewebsites.netapi/CompaniesAPI')
-            .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
-            console.log('Data is ' + Serverdata);
-            _this.companies = Serverdata;
-            _this.http.get('https://stubuzzportal.azurewebsites.netapi/JobsAPI')
-=======
+
         this.http.get('https://stubuzzportal.azurewebsites.net/api/CompaniesAPI')
             .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
             console.log('Data is ' + Serverdata);
             _this.companies = Serverdata;
             _this.http.get('https://stubuzzportal.azurewebsites.net/api/JobsAPI')
->>>>>>> 017240135bfd8e29a69066e2b1f10723fca33803
                 .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
                 console.log('Data is ' + Serverdata);
                 _this.data = Serverdata;
@@ -638,11 +606,8 @@ var JobsComponent = (function () {
         var bodyString = JSON.stringify(this.body); // Stringify payload
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         var options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-<<<<<<< HEAD
-        this.http.post('https://stubuzzportal.azurewebsites.netapi/AppliedJobsAPI', this.body, options) // ...using post request
-=======
+
         this.http.post('https://stubuzzportal.azurewebsites.net/api/AppliedJobsAPI', this.body, options) // ...using post request
->>>>>>> 017240135bfd8e29a69066e2b1f10723fca33803
             .map(function (res) { return res.json(); }) // ...and calling .json() on the response to return data
             .catch(function (error) { return __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__["Observable"].throw(error.json().error || 'Server error'); })
             .subscribe(function (Serverdata) {
@@ -738,11 +703,7 @@ var LoginComponent = (function () {
             console.log(bodyString);
             var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
             var options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-<<<<<<< HEAD
-            this.http.post('https://stubuzzportal.azurewebsites.netapi/Account/Register', this.body, options) // ...using post request
-=======
             this.http.post('https://stubuzzportal.azurewebsites.net/api/Account/Register', this.body, options) // ...using post request
->>>>>>> 017240135bfd8e29a69066e2b1f10723fca33803
                 .map(function (res) { return res.json(); }) // ...and calling .json() on the response to return data
                 .catch(function (error) { return __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__["Observable"].throw(error.json().error || 'Server error'); })
                 .subscribe(function (Serverdata) {
@@ -763,11 +724,8 @@ var LoginComponent = (function () {
         console.log(body);
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded' }); // ... Set content type to JSON
         var options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-<<<<<<< HEAD
-        this.http.post('https://stubuzzportal.azurewebsites.netToken', body, options) // ...using post request
-=======
+
         this.http.post('https://stubuzzportal.azurewebsites.net/Token', body, options) // ...using post request
->>>>>>> 017240135bfd8e29a69066e2b1f10723fca33803
             .map(function (res) { return res.json(); }) // ...and calling .json() on the response to return data
             .subscribe(function (Serverdata) {
             console.log('Data is ' + Serverdata.access_token);
@@ -905,11 +863,8 @@ var ProfileComponent = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Bearer ' + this.DataService.access_token + '' }); // ... Set content type to JSON
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-<<<<<<< HEAD
-        this.http.post('https://stubuzzportal.azurewebsites.netapi/Account/EditProfile', body, options) // ...using post request
-=======
+
         this.http.post('https://stubuzzportal.azurewebsites.net/api/Account/EditProfile', body, options) // ...using post request
->>>>>>> 017240135bfd8e29a69066e2b1f10723fca33803
             .map(function (res) { return res; }) // ...and calling .json() on the response to return data
             .catch(function (error) { return __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__["Observable"].throw(error.error || 'Server error'); })
             .subscribe(function (Serverdata) {
@@ -922,11 +877,8 @@ var ProfileComponent = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Bearer ' + this.DataService.access_token + '' });
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-<<<<<<< HEAD
-        this.http.get('https://stubuzzportal.azurewebsites.netapi/Account/UserInfo', options)
-=======
+
         this.http.get('https://stubuzzportal.azurewebsites.net/api/Account/UserInfo', options)
->>>>>>> 017240135bfd8e29a69066e2b1f10723fca33803
             .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
             console.log('Profile Data is ' + Serverdata, Serverdata.Id);
             _this.profile1 = Serverdata;

@@ -124,7 +124,6 @@ C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\bin\Micros
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\bin\Microsoft.AI.Web.xml
-C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.csprojResolveAssemblyReference.cache
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.Migrations.InitialCreate.resources
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.Migrations.Second.resources
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.Migrations.third.resources
@@ -136,3 +135,5 @@ C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.csproj.CopyComplete
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.dll
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.pdb
+C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.csprojResolveAssemblyReference.cache
+C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.Migrations.Student.resources

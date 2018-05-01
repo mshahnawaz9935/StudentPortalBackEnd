@@ -13,7 +13,7 @@ using StudentPortalAPI.Models;
 
 namespace StudentPortalAPI.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+   // [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class JobsAPIController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();

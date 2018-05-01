@@ -13,7 +13,7 @@ using System.Web.Http.Cors;
 
 namespace StudentPortalAPI.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+   // [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class CompaniesAPIController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -38,7 +38,7 @@ namespace StudentPortalAPI.Controllers
         }
 
         // GET: api/CompaniesAPI/GetCompany_ByEmp_Id/asdfghjk
-        [ResponseType(typeof(Company))]
+     //   [ResponseType(typeof(Company))]
         public IHttpActionResult GetCompany_ByEmp_Id(string id1)
         {
             Company company = db.Companies.Where(s => s.Emp_Id == id1).FirstOrDefault();

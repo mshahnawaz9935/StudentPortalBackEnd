@@ -172,7 +172,7 @@ var appRoutes = [
     { path: 'jobs', component: __WEBPACK_IMPORTED_MODULE_8__jobs_jobs_component__["a" /* JobsComponent */] },
     { path: 'companies', component: __WEBPACK_IMPORTED_MODULE_9__companies_companies_component__["a" /* CompaniesComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_11__login_login_component__["a" /* LoginComponent */] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_12__profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_14__AuthGuard__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_12__profile_profile_component__["a" /* ProfileComponent */] },
     { path: 'appliedjobs', component: __WEBPACK_IMPORTED_MODULE_10__appliedjobs_appliedjobs_component__["a" /* AppliedjobsComponent */] },
     { path: 'candidates', component: __WEBPACK_IMPORTED_MODULE_15__candidates_candidates_component__["a" /* CandidatesComponent */] },
 ];
@@ -238,14 +238,13 @@ var AppliedjobsComponent = (function () {
         var _this = this;
         this.http = http;
         this.data = [];
-
-        this.http.get('https://stubuzzportal.azurewebsites.net/api/AppliedJobsAPI')
+        this.http.get('http://localhost:55899/api/AppliedJobsAPI')
             .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
             _this.applied = Serverdata;
-            _this.http.get('https://stubuzzportal.azurewebsites.net/api/JobsAPI')
+            _this.http.get('http://localhost:55899/api/JobsAPI')
                 .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
                 _this.jobs = Serverdata;
-                _this.http.get('https://stubuzzportal.azurewebsites.net/api/CompaniesAPI')
+                _this.http.get('http://localhost:55899/api/CompaniesAPI')
                     .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
                     _this.companies = Serverdata;
                     _this.getdetails(_this.applied, _this.jobs, _this.companies);
@@ -327,20 +326,24 @@ var CandidatesComponent = (function () {
         this.DataService = DataService;
         this.http = http;
         this.profile1 = { Name: '', Address: '', PhoneNumber: '', Role: '' };
-        this.get_profile();
+        this.get_profile(this.DataService.jobid);
+        console.log(this.DataService.jobid);
     }
     CandidatesComponent.prototype.ngOnInit = function () {
     };
-    CandidatesComponent.prototype.get_profile = function () {
+    CandidatesComponent.prototype.get_profile = function (id) {
         var _this = this;
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Bearer ' + this.DataService.access_token + '' });
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-
-        this.http.get('https://stubuzzportal.azurewebsites.net/api/Account/UserInfo', options)
+        this.http.get('http://localhost:55899/api/AppliedJobsAPI/GetApplied_StudId/' + id, options)
             .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
-            console.log('Profile Data is ' + Serverdata, Serverdata.Id);
-            _this.profile1 = Serverdata;
+            _this.DataService.candidateid = Serverdata.studentid;
+            _this.http.get('http://localhost:55899/api/Account/GetUserProfile/' + _this.DataService.candidateid, options)
+                .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
+                console.log('Profile Data is ' + Serverdata, Serverdata.Id);
+                _this.profile1 = Serverdata;
+            });
         });
     };
     CandidatesComponent = __decorate([
@@ -433,8 +436,7 @@ var CompaniesComponent = (function () {
         console.log(bodyString);
         var headers = new __WEBPACK_IMPORTED_MODULE_6__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         var options = new __WEBPACK_IMPORTED_MODULE_6__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-
-        this.http.post('https://stubuzzportal.azurewebsites.net/api/CompaniesAPI', this.body, options) // ...using post request
+        this.http.post('http://localhost:55899/api/CompaniesAPI', this.body, options) // ...using post request
             .map(function (res) { return res.json(); }) // ...and calling .json() on the response to return data
             .catch(function (error) { return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(error.json().error || 'Server error'); })
             .subscribe(function (Serverdata) {
@@ -446,7 +448,7 @@ var CompaniesComponent = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_6__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Bearer ' + this.DataService.access_token + '' });
         var options = new __WEBPACK_IMPORTED_MODULE_6__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-        this.http.get('https://stubuzzportal.azurewebsites.net/api/CompaniesAPI/GetCompany_ByEmp_Id/' + Emp_Id, options)
+        this.http.get('http://localhost:55899/api/CompaniesAPI/GetCompany_ByEmp_Id/' + Emp_Id, options)
             .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
             console.log('Profile Data is ' + Serverdata, Serverdata.Id);
             _this.company1 = Serverdata;
@@ -460,8 +462,7 @@ var CompaniesComponent = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_6__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Bearer ' + this.DataService.access_token + '' });
         var options = new __WEBPACK_IMPORTED_MODULE_6__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-
-        this.http.get('https://stubuzzportal.azurewebsites.net/api/JobsAPI/GetJobByCompany/' + this.company_id, options)
+        this.http.get('http://localhost:55899/api/JobsAPI/GetJobByCompany/' + this.company_id, options)
             .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
             console.log('Jobs Data is ' + Serverdata);
             _this.jobsdata = Serverdata;
@@ -472,15 +473,14 @@ var CompaniesComponent = (function () {
     };
     CompaniesComponent.prototype.deletejobs = function (id) {
         var _this = this;
-
-        this.http.delete('https://stubuzzportal.azurewebsites.net/api/JobsAPI/' + id).map(function (response) { return response.json(); }).subscribe(function (data) {
+        this.http.delete('http://localhost:55899/api/JobsAPI/' + id).map(function (response) { return response.json(); }).subscribe(function (data) {
             console.log('Jobs Deleted status is ' + data);
             _this.status = data;
         });
     };
     CompaniesComponent.prototype.view_candidates = function (id) {
+        this.DataService.jobid = id;
         this.router.navigate(['/candidates']);
-        this.DataService.candidateid = id;
     };
     CompaniesComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
@@ -563,12 +563,11 @@ var JobsComponent = (function () {
     function JobsComponent(http) {
         var _this = this;
         this.http = http;
-
-        this.http.get('https://stubuzzportal.azurewebsites.net/api/CompaniesAPI')
+        this.http.get('http://localhost:55899/api/CompaniesAPI')
             .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
             console.log('Data is ' + Serverdata);
             _this.companies = Serverdata;
-            _this.http.get('https://stubuzzportal.azurewebsites.net/api/JobsAPI')
+            _this.http.get('http://localhost:55899/api/JobsAPI')
                 .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
                 console.log('Data is ' + Serverdata);
                 _this.data = Serverdata;
@@ -606,8 +605,7 @@ var JobsComponent = (function () {
         var bodyString = JSON.stringify(this.body); // Stringify payload
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         var options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-
-        this.http.post('https://stubuzzportal.azurewebsites.net/api/AppliedJobsAPI', this.body, options) // ...using post request
+        this.http.post('http://localhost:55899/api/AppliedJobsAPI', this.body, options) // ...using post request
             .map(function (res) { return res.json(); }) // ...and calling .json() on the response to return data
             .catch(function (error) { return __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__["Observable"].throw(error.json().error || 'Server error'); })
             .subscribe(function (Serverdata) {
@@ -703,7 +701,7 @@ var LoginComponent = (function () {
             console.log(bodyString);
             var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
             var options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-            this.http.post('https://stubuzzportal.azurewebsites.net/api/Account/Register', this.body, options) // ...using post request
+            this.http.post('http://localhost:55899/api/Account/Register', this.body, options) // ...using post request
                 .map(function (res) { return res.json(); }) // ...and calling .json() on the response to return data
                 .catch(function (error) { return __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__["Observable"].throw(error.json().error || 'Server error'); })
                 .subscribe(function (Serverdata) {
@@ -724,8 +722,7 @@ var LoginComponent = (function () {
         console.log(body);
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded' }); // ... Set content type to JSON
         var options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-
-        this.http.post('https://stubuzzportal.azurewebsites.net/Token', body, options) // ...using post request
+        this.http.post('http://localhost:55899/Token', body, options) // ...using post request
             .map(function (res) { return res.json(); }) // ...and calling .json() on the response to return data
             .subscribe(function (Serverdata) {
             console.log('Data is ' + Serverdata.access_token);
@@ -863,8 +860,7 @@ var ProfileComponent = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Bearer ' + this.DataService.access_token + '' }); // ... Set content type to JSON
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-
-        this.http.post('https://stubuzzportal.azurewebsites.net/api/Account/EditProfile', body, options) // ...using post request
+        this.http.post('http://localhost:55899/api/Account/EditProfile', body, options) // ...using post request
             .map(function (res) { return res; }) // ...and calling .json() on the response to return data
             .catch(function (error) { return __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__["Observable"].throw(error.error || 'Server error'); })
             .subscribe(function (Serverdata) {
@@ -877,8 +873,7 @@ var ProfileComponent = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Bearer ' + this.DataService.access_token + '' });
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers }); // Create a request option
-
-        this.http.get('https://stubuzzportal.azurewebsites.net/api/Account/UserInfo', options)
+        this.http.get('http://localhost:55899/api/Account/UserInfo', options)
             .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
             console.log('Profile Data is ' + Serverdata, Serverdata.Id);
             _this.profile1 = Serverdata;
@@ -998,7 +993,7 @@ module.exports = "<div class=\"container\">\r\n\t\t\t\r\n            <div class=
 /***/ 690:
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class =\"container\">\n<p>\n  candidates works! and id is {{DataService.candidateid}}\n</p>\n\n<p>\n    Name : {{profile1.Name}}\n  </p>\n  <p>\n    Phone : {{profile1.PhoneNumber}}\n  </p>\n  <p>\n    Address : {{profile1.Address}}\n  </p></div>"
+module.exports = "\r\n<div class =\"container\">\r\n<p>\r\n  candidates works! and id is {{DataService.candidateid}}\r\n</p>\r\n\r\n<p>\r\n    Name : {{profile1.Name}}\r\n  </p>\r\n  <p>\r\n    Phone : {{profile1.PhoneNumber}}\r\n  </p>\r\n  <p>\r\n    Address : {{profile1.Address}}\r\n  </p></div>"
 
 /***/ }),
 
@@ -1040,7 +1035,7 @@ module.exports = "       <!--Navbar-->\r\n        <nav class=\"navbar navbar-exp
 /***/ 696:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" >\r\n<p>\r\n  Name : {{profile1.Name}}\r\n</p>\r\n<p>\r\n  Phone : {{profile1.PhoneNumber}}\r\n</p>\r\n<p>\r\n  Address : {{profile1.Address}}\r\n</p>\r\n\r\n<h5 *ngIf=\"role == true\"><a>Create/View your Company and Post Jobs</a></h5>\r\n\r\n<form >\r\n  <h2 class=\"text-center mb-4\">Edit Profile</h2>\r\n\r\n  <div class=\"md-form\">\r\n      <i class=\"fa fa-user prefix grey-text\"></i>\r\n      <input type=\"text\" id=\"orangeForm-name\" class=\"form-control\" name=\"name\" [(ngModel)]=\"profile.name\">\r\n      <label for=\"orangeForm-name\">Your name</label>\r\n  </div>\r\n  <div class=\"md-form\">\r\n      <i class=\"fa fa-envelope prefix grey-text\"></i>\r\n      <input type=\"text\" id=\"orangeForm-email\" class=\"form-control\" name=\"PhoneNumber\" [(ngModel)]=\"profile.PhoneNumber\">\r\n      <label for=\"orangeForm-email\">Your Phone</label>\r\n  </div>\r\n\r\n  <div class=\"md-form\">\r\n      <i class=\"fa fa-lock prefix grey-text\"></i>\r\n      <input type=\"text\" id=\"orangeForm-pass\" class=\"form-control\" name=\"Address\" [(ngModel)]=\"profile.Address\">\r\n      <label for=\"orangeForm-pass\">Your Address</label>\r\n  </div>\r\n\r\n  <div class=\"text-center\">\r\n      <button class=\"btn btn-deep-orange\" (click)= \"profile_data(profile.name,profile.PhoneNumber,profile.Address)\" >Save Profile</button>\r\n      <br>\r\n      <br>\r\n  </div>\r\n\r\n \r\n\r\n</form>\r\n</div>"
+module.exports = "<div class=\"container\" >\r\n<section class=\"text-center pb-5\">\r\n    <h1 class=\"h1 pt-4\">Manage Your Profile</h1>\r\n\r\n            <div class=\"testimonial\">\r\n                <!--Avatar-->\r\n                <div class=\"avatar mx-auto\">\r\n\r\n                    <img src=\"https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg\" class=\"rounded-circle img-fluid\" alt=\"First sample avatar image\">\r\n\r\n                </div>\r\n          \r\n                <p>\r\n                    <i class=\"fa fa-quote-left\"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae\r\n                    quaerat ad velit ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore cum accusamus eveniet\r\n                    molestias voluptatum inventore laboriosam labore sit, aspernatur praesentium iste impedit quidem dolor\r\n                    veniam. <i class=\"fa fa-quote-right\"></i></p><a data-toggle=\"modal\" data-target=\"#orangeModalSubscription\"><i class=\"fa fa-edit fa-3x\" aria-hidden=\"true\"></i></a>\r\n\r\n\r\n                <h4>{{profile1.Name}}</h4>\r\n                <h6>{{profile1.PhoneNumber}}</h6>\r\n\r\n                <!--Review-->\r\n                <i class=\"fa fa-star\"> </i>\r\n                <i class=\"fa fa-star\"> </i>\r\n                <i class=\"fa fa-star\"> </i>\r\n                <i class=\"fa fa-star\"> </i>\r\n                <i class=\"fa fa-star-half-full\"> </i>\r\n            </div>\r\n</section>\r\n\r\n\r\n<p>\r\n  Name : {{profile1.Name}}\r\n</p>\r\n<p>\r\n  Phone : {{profile1.PhoneNumber}}\r\n</p>\r\n<p>\r\n  Address : {{profile1.Address}}\r\n</p>\r\n\r\n<h5 *ngIf=\"role == true\"><a>Create/View your Company and Post Jobs</a></h5>\r\n\r\n<form >\r\n  <h2 class=\"text-center mb-4\">Edit Profile</h2>\r\n\r\n  <div class=\"md-form\">\r\n      <i class=\"fa fa-user prefix grey-text\"></i>\r\n      <input type=\"text\" id=\"orangeForm-name\" class=\"form-control\" name=\"name\" [(ngModel)]=\"profile.name\">\r\n      <label for=\"orangeForm-name\">Your name</label>\r\n  </div>\r\n  <div class=\"md-form\">\r\n      <i class=\"fa fa-envelope prefix grey-text\"></i>\r\n      <input type=\"text\" id=\"orangeForm-email\" class=\"form-control\" name=\"PhoneNumber\" [(ngModel)]=\"profile.PhoneNumber\">\r\n      <label for=\"orangeForm-email\">Your Phone</label>\r\n  </div>\r\n\r\n  <div class=\"md-form\">\r\n      <i class=\"fa fa-lock prefix grey-text\"></i>\r\n      <input type=\"text\" id=\"orangeForm-pass\" class=\"form-control\" name=\"Address\" [(ngModel)]=\"profile.Address\">\r\n      <label for=\"orangeForm-pass\">Your Address</label>\r\n  </div>\r\n\r\n  <div class=\"text-center\">\r\n      <button class=\"btn btn-deep-orange\" (click)= \"profile_data(profile.name,profile.PhoneNumber,profile.Address)\" >Save Profile</button>\r\n      <br>\r\n      <br>\r\n  </div>\r\n\r\n</form>\r\n\r\n<div class=\"modal fade\" id=\"orangeModalSubscription\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\r\n    <div class=\"modal-dialog modal-notify modal-warning\" role=\"document\">\r\n        <!--Content-->\r\n        <div class=\"modal-content\">\r\n            <!--Header-->\r\n            <div class=\"modal-header text-center\">\r\n                <h4 class=\"modal-title white-text w-100 font-weight-bold py-2\">Subscribe</h4>\r\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n                    <span aria-hidden=\"true\" class=\"white-text\">&times;</span>\r\n                </button>\r\n            </div>\r\n\r\n            <!--Body-->\r\n            <div class=\"modal-body\">\r\n                <div class=\"md-form mb-5\">\r\n                    <i class=\"fa fa-user prefix grey-text\"></i>\r\n                    <input type=\"text\" id=\"form3\" class=\"form-control validate\">\r\n                    <label data-error=\"wrong\" data-success=\"right\" for=\"form3\">Your name</label>\r\n                </div>\r\n\r\n                <div class=\"md-form\">\r\n                    <i class=\"fa fa-envelope prefix grey-text\"></i>\r\n                    <input type=\"email\" id=\"form2\" class=\"form-control validate\">\r\n                    <label data-error=\"wrong\" data-success=\"right\" for=\"form2\">Your email</label>\r\n                </div>\r\n            </div>\r\n\r\n            <!--Footer-->\r\n            <div class=\"modal-footer justify-content-center\">\r\n                <a type=\"button\" class=\"btn btn-outline-warning waves-effect\">Send <i class=\"fa fa-paper-plane-o ml-1\"></i></a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"text-center\">\r\n    <a href=\"\" class=\"btn btn-default btn-rounded\" data-toggle=\"modal\" data-target=\"#orangeModalSubscription\">Launch modal Subscription</a>\r\n</div>\r\n\r\n    \r\n\r\n</div>"
 
 /***/ }),
 
@@ -1075,6 +1070,7 @@ var DataService = (function () {
         this.http = http;
         this.access_token = '';
         this.UserId = '';
+        this.jobid = '';
         this.candidateid = '';
         this.loggedIN = false;
     }

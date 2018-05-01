@@ -29,14 +29,14 @@ namespace StudentPortalAPI.Providers
             _publicClientId = publicClientId;
         }
 
-        [EnableCors(origins: "*", headers: "*", methods: "*", SupportsCredentials = true)]
+       // [EnableCors(origins: "*", headers: "*", methods: "*", SupportsCredentials = true)]
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
             ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
 
-            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+       //     context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
             if (user == null)
             {

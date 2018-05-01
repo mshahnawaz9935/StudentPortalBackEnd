@@ -7,13 +7,15 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using System.Web.Mvc;
 using StudentPortalAPI.Models;
 
 namespace StudentPortalAPI.Controllers
 {
-  //  [System.Web.Http.Authorize(Roles ="Student")]
+   // [EnableCors(origins: "*", headers: "*", methods: "*")]
+    //  [System.Web.Http.Authorize(Roles ="Student")]
     public class AppliedJobsAPIController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -29,6 +31,17 @@ namespace StudentPortalAPI.Controllers
         public IHttpActionResult GetAppliedJobs(int id)
         {
             AppliedJobs appliedJobs = db.AppliedJobs.Find(id);
+            if (appliedJobs == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(appliedJobs);
+        }
+        [ResponseType(typeof(AppliedJobs))]
+        public IHttpActionResult GetApplied_StudId(string id1)
+        {
+            AppliedJobs appliedJobs = db.AppliedJobs.Where(x=>x.jobid == id1).FirstOrDefault();
             if (appliedJobs == null)
             {
                 return NotFound();

@@ -266,6 +266,10 @@
     <Compile Include="Migrations\201802260504335_Company2.Designer.cs">
       <DependentUpon>201802260504335_Company2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805010924316_Student.cs" />
+    <Compile Include="Migrations\201805010924316_Student.Designer.cs">
+      <DependentUpon>201805010924316_Student.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -410,21 +414,31 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712170632586_InitialCreate.resx">
       <DependentUpon>201712170632586_InitialCreate.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712190451562_Second.resx">
       <DependentUpon>201712190451562_Second.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712190752491_third.resx">
       <DependentUpon>201712190752491_third.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802242110453_Role.resx">
       <DependentUpon>201802242110453_Role.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802260500464_Company.resx">
       <DependentUpon>201802260500464_Company.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802260504335_Company2.resx">
       <DependentUpon>201802260504335_Company2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805010924316_Student.resx">
+      <DependentUpon>201805010924316_Student.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

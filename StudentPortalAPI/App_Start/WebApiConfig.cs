@@ -21,10 +21,10 @@ namespace StudentPortalAPI
 
             // Web API routes
             config.MapHttpAttributeRoutes();
-            var cors = new EnableCorsAttribute("*",
-                                               "Origin, Content-Type, Accept",
-                                               "GET, PUT, POST, DELETE, OPTIONS");
-            config.EnableCors(cors);
+         //   var cors = new EnableCorsAttribute("*",
+         //                                      "Origin, Content-Type, Accept",
+         //                                      "GET, PUT, POST, DELETE, OPTIONS");
+         //   config.EnableCors(cors);
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

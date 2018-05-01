@@ -276,6 +276,10 @@
     <Compile Include="Migrations\201805011642593_Education_Experience.Designer.cs">
       <DependentUpon>201805011642593_Education_Experience.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805011657260_changesExp.cs" />
+    <Compile Include="Migrations\201805011657260_changesExp.Designer.cs">
+      <DependentUpon>201805011657260_changesExp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -450,6 +454,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805011642593_Education_Experience.resx">
       <DependentUpon>201805011642593_Education_Experience.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805011657260_changesExp.resx">
+      <DependentUpon>201805011657260_changesExp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

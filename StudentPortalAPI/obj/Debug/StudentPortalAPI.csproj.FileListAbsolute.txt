@@ -138,3 +138,4 @@ C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.csprojResolveAssemblyReference.cache
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.Migrations.Student.resources
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.Migrations.Education_Experience.resources
+C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.Migrations.changesExp.resources

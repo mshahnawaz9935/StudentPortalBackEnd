@@ -10,6 +10,7 @@ namespace StudentPortalAPI.Models
     {
         [Key]
         public int id { get; set; }
+        public string title { get; set; }
         public string company { get; set; }
         public string location { get; set; }
         public string date_from { get; set; }

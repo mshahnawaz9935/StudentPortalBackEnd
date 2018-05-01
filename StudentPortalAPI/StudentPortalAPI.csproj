@@ -236,6 +236,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AppliedJobsAPIController.cs" />
     <Compile Include="Controllers\CompaniesAPIController.cs" />
+    <Compile Include="Controllers\EducationsAPIController.cs" />
+    <Compile Include="Controllers\ExperiencesAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobsAPIController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -270,11 +272,17 @@
     <Compile Include="Migrations\201805010924316_Student.Designer.cs">
       <DependentUpon>201805010924316_Student.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805011642593_Education_Experience.cs" />
+    <Compile Include="Migrations\201805011642593_Education_Experience.Designer.cs">
+      <DependentUpon>201805011642593_Education_Experience.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppliedJobs.cs" />
     <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\Education.cs" />
+    <Compile Include="Models\Experience.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\Student.cs" />
@@ -439,6 +447,9 @@
     <EmbeddedResource Include="Migrations\201805010924316_Student.resx">
       <DependentUpon>201805010924316_Student.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805011642593_Education_Experience.resx">
+      <DependentUpon>201805011642593_Education_Experience.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

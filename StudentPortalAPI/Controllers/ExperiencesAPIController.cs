@@ -34,6 +34,18 @@ namespace StudentPortalAPI.Controllers
 
             return Ok(experience);
         }
+        [ResponseType(typeof(Experience))]
+        public IHttpActionResult GetExperience_By_Id(string id1)
+        {
+            List<Experience> experiences = new List<Experience>();
+            experiences = db.Experiences.Where(x => x.studentid == id1).ToList();
+            if (experiences.Count() == 0)
+            {
+                return NotFound();
+            }
+
+            return Ok(experiences);
+        }
 
         // PUT: api/ExperiencesAPI/5
         [ResponseType(typeof(void))]

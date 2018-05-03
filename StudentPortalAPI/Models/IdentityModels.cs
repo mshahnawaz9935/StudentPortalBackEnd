@@ -43,5 +43,7 @@ namespace StudentPortalAPI.Models
         public System.Data.Entity.DbSet<StudentPortalAPI.Models.Education> Educations { get; set; }
 
         public System.Data.Entity.DbSet<StudentPortalAPI.Models.Experience> Experiences { get; set; }
+
+        public System.Data.Entity.DbSet<StudentPortalAPI.Models.Photo> Photos { get; set; }
     }
 }

@@ -203,7 +203,6 @@ C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\bin\System.We
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\bin\System.Web.Webpages.Razor.xml
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\bin\System.Web.Helpers.xml
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\bin\System.Web.Mvc.xml
-C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.csprojResolveAssemblyReference.cache
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.Migrations.InitialCreate.resources
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.Migrations.First.resources
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.Migrations.Second.resources

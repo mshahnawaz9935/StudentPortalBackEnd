@@ -82,7 +82,7 @@ namespace StudentPortalAPI.Controllers
 
         // POST: api/PhotosAPI
         [ResponseType(typeof(Photo))]
-        public async Task<IHttpActionResult> PostPhoto(Photo p)
+        public async Task<IHttpActionResult> PostPhoto()
         {
             string root = HttpContext.Current.Server.MapPath("~/App_Data");
             var provider = new MultipartFormDataStreamProvider(root);
@@ -103,11 +103,15 @@ namespace StudentPortalAPI.Controllers
             {
                 streamContent.Headers.Add(header.Key, header.Value);
             }
+            try
+            {
+                var filesReadToProvider = await streamContent.ReadAsMultipartAsync(provider);
+                var image_name = filesReadToProvider.FormData["name"];
+                var studentid = filesReadToProvider.FormData["studentid"];
+            }
+            catch(Exception e) { }
 
-            var filesReadToProvider = await streamContent.ReadAsMultipartAsync(provider);
-
-            p.image_name =filesReadToProvider.FormData["name"];
-            p.studentid = filesReadToProvider.FormData["studentid"];
+            Photo p = new Photo();
 
 
             var file = HttpContext.Current.Request.Files.Count > 0 ?

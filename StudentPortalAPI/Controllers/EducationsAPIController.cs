@@ -36,8 +36,8 @@ namespace StudentPortalAPI.Controllers
         }
         public IHttpActionResult GetEducation_By_Id(string id1)
         {
-            List<Experience> education = new List<Experience>();
-            education = db.Experiences.Where(x => x.studentid == id1).ToList();
+            List<Education> education = new List<Education>();
+            education = db.Educations.Where(x => x.studentid == id1).ToList();
             if (education.Count() == 0)
             {
                 return NotFound();

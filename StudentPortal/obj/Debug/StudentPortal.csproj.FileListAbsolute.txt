@@ -215,3 +215,4 @@ C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\Stu
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.csproj.CopyComplete
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.dll
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.pdb
+C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.csprojResolveAssemblyReference.cache

@@ -281,9 +281,9 @@
     <Compile Include="Migrations\201805011657260_changesExp.Designer.cs">
       <DependentUpon>201805011657260_changesExp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805061543388_Photo.cs" />
-    <Compile Include="Migrations\201805061543388_Photo.Designer.cs">
-      <DependentUpon>201805061543388_Photo.cs</DependentUpon>
+    <Compile Include="Migrations\201805072355290_Photos.cs" />
+    <Compile Include="Migrations\201805072355290_Photos.Designer.cs">
+      <DependentUpon>201805072355290_Photos.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -465,8 +465,8 @@
     <EmbeddedResource Include="Migrations\201805011657260_changesExp.resx">
       <DependentUpon>201805011657260_changesExp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805061543388_Photo.resx">
-      <DependentUpon>201805061543388_Photo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805072355290_Photos.resx">
+      <DependentUpon>201805072355290_Photos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

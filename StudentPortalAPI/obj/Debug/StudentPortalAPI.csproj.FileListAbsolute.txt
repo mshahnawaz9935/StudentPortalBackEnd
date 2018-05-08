@@ -279,4 +279,4 @@ C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\Stud
 C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.csproj.CoreCompileInputs.cache
 C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.dll
 C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.pdb
-C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.Migrations.Photo.resources
+C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.Migrations.Photos.resources

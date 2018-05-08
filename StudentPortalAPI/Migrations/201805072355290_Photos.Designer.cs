@@ -7,13 +7,13 @@ namespace StudentPortalAPI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Photo : IMigrationMetadata
+    public sealed partial class Photos : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Photo));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Photos));
         
         string IMigrationMetadata.Id
         {
-            get { return "201805061543388_Photo"; }
+            get { return "201805072355290_Photos"; }
         }
         
         string IMigrationMetadata.Source

@@ -450,7 +450,7 @@ var CandidatesComponent = (function () {
             .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
             console.log('Photo Data is ' + Serverdata);
             _this.photo1 = Serverdata;
-            _this.photo1.image_name = "Scripts/Images/" + _this.photo1.image_name;
+            _this.photo1.image_name = "Scripts/dist/assets/Images/" + _this.photo1.image_name;
         });
     };
     CandidatesComponent = __decorate([
@@ -1083,7 +1083,7 @@ var ProfileComponent = (function () {
             .map(function (response) { return response.json(); }).subscribe(function (Serverdata) {
             console.log('Photo Data is ' + Serverdata);
             _this.photo1 = Serverdata;
-            _this.photo1.image_name = "Scripts/Images/" + _this.photo1.image_name;
+            _this.photo1.image_name = "Scripts/dist/assets/Images/" + _this.photo1.image_name;
         });
     };
     ProfileComponent = __decorate([

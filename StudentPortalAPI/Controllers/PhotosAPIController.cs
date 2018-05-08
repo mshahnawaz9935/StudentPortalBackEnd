@@ -135,7 +135,7 @@ namespace StudentPortalAPI.Controllers
             if (file != null)
             {
 
-                file.SaveAs(System.Web.HttpContext.Current.Server.MapPath("~/Scripts/Images/")
+                file.SaveAs(System.Web.HttpContext.Current.Server.MapPath("~/Scripts/dist/assets/Images/")
                                                       + file.FileName);
                 p.image_name = file.FileName;
                 p.studentid = studentid;

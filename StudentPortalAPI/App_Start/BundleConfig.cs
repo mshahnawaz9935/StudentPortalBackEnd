@@ -22,6 +22,7 @@ namespace StudentPortalAPI
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
+                      "~/Content/mdb.min.css",
                       "~/Content/site.css"));
 
             // Angular bundles

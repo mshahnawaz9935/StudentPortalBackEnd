@@ -280,4 +280,3 @@ C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.csproj.CopyComplete
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.dll
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.pdb
-C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.csprojResolveAssemblyReference.cache

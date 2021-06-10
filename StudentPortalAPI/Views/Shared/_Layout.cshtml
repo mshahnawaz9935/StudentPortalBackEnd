@@ -5,15 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Scripts.Render("~/bundles/modernizr")
-    <link rel="import" href="~/Scripts/dist/index.html" />
+    @Styles.Render("~/Content/StudentPortalClient")
 </head>
 <body>
-    <app-root>Loading..</app-root>
-        @RenderBody()
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <app-root></app-root>
+    @RenderBody()
+    @Scripts.Render("~/bundles/StudentPortalClient")
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -26,6 +27,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -303,8 +305,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
-    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\all.min.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fontawesome.min.css" />
+    <Content Include="Content\fonts.css" />
+    <Content Include="Content\mdb.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -396,6 +401,43 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="StudentPortalClient\karma.conf.js" />
+    <Content Include="StudentPortalClient\src\app\app.component.css" />
+    <Content Include="StudentPortalClient\src\app\app.component.html" />
+    <Content Include="StudentPortalClient\src\app\appliedjobs\appliedjobs.component.css" />
+    <Content Include="StudentPortalClient\src\app\appliedjobs\appliedjobs.component.html" />
+    <Content Include="StudentPortalClient\src\app\candidates\candidates.component.css" />
+    <Content Include="StudentPortalClient\src\app\candidates\candidates.component.html" />
+    <Content Include="StudentPortalClient\src\app\companies\companies.component.css" />
+    <Content Include="StudentPortalClient\src\app\companies\companies.component.html" />
+    <Content Include="StudentPortalClient\src\app\home\home.component.css" />
+    <Content Include="StudentPortalClient\src\app\home\home.component.html" />
+    <Content Include="StudentPortalClient\src\app\jobs\jobs.component.css" />
+    <Content Include="StudentPortalClient\src\app\jobs\jobs.component.html" />
+    <Content Include="StudentPortalClient\src\app\login\login.component.css" />
+    <Content Include="StudentPortalClient\src\app\login\login.component.html" />
+    <Content Include="StudentPortalClient\src\app\menu-bar\menu-bar.component.css" />
+    <Content Include="StudentPortalClient\src\app\menu-bar\menu-bar.component.html" />
+    <Content Include="StudentPortalClient\src\app\profile\profile.component.css" />
+    <Content Include="StudentPortalClient\src\app\profile\profile.component.html" />
+    <Content Include="StudentPortalClient\src\assets\css\bootstrap.min.css" />
+    <Content Include="StudentPortalClient\src\assets\css\font-awesome.min.css" />
+    <Content Include="StudentPortalClient\src\assets\css\mdb.css" />
+    <Content Include="StudentPortalClient\src\assets\css\mdb.min.css" />
+    <Content Include="StudentPortalClient\src\assets\css\style.css" />
+    <Content Include="StudentPortalClient\src\assets\font\fa\fontawesome-webfont.svg" />
+    <Content Include="StudentPortalClient\src\assets\js\bootstrap.js" />
+    <Content Include="StudentPortalClient\src\assets\js\bootstrap.min.js" />
+    <Content Include="StudentPortalClient\src\assets\js\jquery-3.1.1.js" />
+    <Content Include="StudentPortalClient\src\assets\js\jquery-3.1.1.min.js" />
+    <Content Include="StudentPortalClient\src\assets\js\jquery-3.2.1.js" />
+    <Content Include="StudentPortalClient\src\assets\js\jquery-3.2.1.min.js" />
+    <Content Include="StudentPortalClient\src\assets\js\mdb.js" />
+    <Content Include="StudentPortalClient\src\assets\js\mdb.min.js" />
+    <Content Include="StudentPortalClient\src\assets\js\popper.min.js" />
+    <Content Include="StudentPortalClient\src\favicon.ico" />
+    <Content Include="StudentPortalClient\src\index.html" />
+    <Content Include="StudentPortalClient\src\styles.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -412,6 +454,42 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="StudentPortalClient\src\assets\.gitkeep" />
+    <Content Include="StudentPortalClient\src\assets\font\fa\fontawesome-webfont.eot" />
+    <Content Include="StudentPortalClient\src\assets\font\fa\fontawesome-webfont.ttf" />
+    <Content Include="StudentPortalClient\src\assets\font\fa\fontawesome-webfont.woff" />
+    <Content Include="StudentPortalClient\src\assets\font\fa\fontawesome-webfont.woff2" />
+    <Content Include="StudentPortalClient\src\assets\font\fa\FontAwesome.otf" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Bold.eot" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Bold.ttf" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Bold.woff" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Bold.woff2" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Light.eot" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Light.ttf" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Light.woff" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Light.woff2" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Medium.eot" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Medium.ttf" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Medium.woff" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Medium.woff2" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Regular.eot" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Regular.ttf" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Regular.woff" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Regular.woff2" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Thin.eot" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Thin.ttf" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Thin.woff" />
+    <Content Include="StudentPortalClient\src\assets\font\roboto\Roboto-Thin.woff2" />
+    <Content Include="StudentPortalClient\.browserslistrc" />
+    <Content Include="StudentPortalClient\.editorconfig" />
+    <Content Include="StudentPortalClient\.gitignore" />
+    <Content Include="StudentPortalClient\angular.json" />
+    <Content Include="StudentPortalClient\package-lock.json" />
+    <Content Include="StudentPortalClient\package.json" />
+    <Content Include="StudentPortalClient\README.md" />
+    <Content Include="StudentPortalClient\tsconfig.app.json" />
+    <Content Include="StudentPortalClient\tsconfig.json" />
+    <Content Include="StudentPortalClient\tsconfig.spec.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -469,11 +547,49 @@
       <DependentUpon>201805072355290_Photos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="StudentPortalClient\src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\app.component.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\app.module.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\appliedjobs\appliedjobs.component.spec.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\appliedjobs\appliedjobs.component.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\candidates\candidates.component.spec.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\candidates\candidates.component.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\companies\companies.component.spec.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\companies\companies.component.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\companies\Company.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\home\home.component.spec.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\home\home.component.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\jobs\Job.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\jobs\jobs.component.spec.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\jobs\jobs.component.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\login\login.component.spec.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\login\login.component.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\login\User.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\menu-bar\menu-bar.component.spec.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\menu-bar\menu-bar.component.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\profile\Education.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\profile\Experience.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\profile\Photo.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\profile\profile.component.spec.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\profile\profile.component.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\app\profile\Profile.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\environments\environment.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\main.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\polyfills.ts" />
+    <TypeScriptCompile Include="StudentPortalClient\src\test.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

@@ -89,7 +89,6 @@ C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortal\bin\System
 C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortal\bin\System.Web.Webpages.Razor.xml
 C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortal\bin\System.Web.Helpers.xml
 C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortal\bin\System.Web.Mvc.xml
-C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.csprojResolveAssemblyReference.cache
 C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.Migrations.InitialCreate.resources
 C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.Migrations.First.resources
 C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.Migrations.Second.resources
@@ -215,4 +214,12 @@ C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\Stu
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.csproj.CopyComplete
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.dll
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.pdb
+<<<<<<< HEAD
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.csprojResolveAssemblyReference.cache
+C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.csprojAssemblyReference.cache
+C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.Migrations.Fifth.resources
+C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.Migrations.Fifth1.resources
+C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.csproj.CoreCompileInputs.cache
+C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortal\obj\Debug\StudentPortal.csproj.CopyComplete
+=======
+>>>>>>> parent of a919dec (updates)

@@ -21,8 +21,25 @@ namespace StudentPortalAPI
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/mdb.min.css",
+                       "~/Content/fonts.css",
+                        "~/Content/all.min.css"
+                   //   "~/Content/site.css")
+                   ));
+
+            // Angular bundles
+            bundles.Add(new ScriptBundle("~/bundles/StudentPortalClient")
+              .Include(
+                "~/bundles/StudentPortalClientOutput/inline.*",
+                "~/bundles/StudentPortalClientOutput/polyfills.*",
+                "~/bundles/StudentPortalClientOutput/scripts.*",
+                "~/bundles/StudentPortalClientOutput/vendor.*",
+                "~/bundles/StudentPortalClientOutput/runtime.*",
+                "~/bundles/StudentPortalClientOutput/main.*"));
+
+            bundles.Add(new StyleBundle("~/Content/StudentPortalClient")
+              .Include("~/bundles/StudentPortalClientOutput/styles.*"));
         }
     }
 }

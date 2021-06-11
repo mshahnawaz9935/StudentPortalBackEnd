@@ -280,3 +280,4 @@ C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Deb
 C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.csproj.CopyComplete
 C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.dll
 C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.pdb
+C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.Migrations.Photos.resources

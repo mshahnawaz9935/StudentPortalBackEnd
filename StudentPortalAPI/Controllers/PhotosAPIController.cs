@@ -44,6 +44,17 @@ namespace StudentPortalAPI.Controllers
 
             return Ok(photo);
         }
+        [ResponseType(typeof(Photo))]
+        public async Task<IHttpActionResult> GetPhoto_By_Id(string id1)
+        {
+            Photo photo = await db.Photos.Where(x=>x.studentid == id1).FirstOrDefaultAsync();
+            if (photo == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(photo);
+        }
 
         // PUT: api/PhotosAPI/5
         [ResponseType(typeof(void))]
@@ -84,6 +95,7 @@ namespace StudentPortalAPI.Controllers
         [ResponseType(typeof(Photo))]
         public async Task<IHttpActionResult> PostPhoto()
         {
+            var studentid = "";
             string root = HttpContext.Current.Server.MapPath("~/App_Data");
             var provider = new MultipartFormDataStreamProvider(root);
             Stream reqStream = Request.Content.ReadAsStreamAsync().Result;
@@ -107,7 +119,7 @@ namespace StudentPortalAPI.Controllers
             {
                 var filesReadToProvider = await streamContent.ReadAsMultipartAsync(provider);
                 var image_name = filesReadToProvider.FormData["name"];
-                var studentid = filesReadToProvider.FormData["studentid"];
+                studentid = filesReadToProvider.FormData["studentid"];
             }
             catch(Exception e) { }
 
@@ -123,9 +135,10 @@ namespace StudentPortalAPI.Controllers
             if (file != null)
             {
 
-                file.SaveAs(HostingEnvironment.MapPath("~/Images/")
+                file.SaveAs(System.Web.HttpContext.Current.Server.MapPath("~/Scripts/dist/assets/Images/")
                                                       + file.FileName);
                 p.image_name = file.FileName;
+                p.studentid = studentid;
             }
             db.Photos.Add(p);
 

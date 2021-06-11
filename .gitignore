@@ -50,3 +50,9 @@ Temporary Items
 .vs/StudentPortal/v15/sqlite3/storage.ide
 StudentPortalAPI/obj/Debug/StudentPortalAPI.dll
 StudentPortalAPI/obj/Debug/StudentPortalAPI.pdb
+StudentPortalAPI/Scripts/dist/main.bundle.map
+.vs/StudentPortal/v15/sqlite3/storage.ide-wal
+.vs/StudentPortal/v15/Server/sqlite3/storage.ide-wal
+.vs/StudentPortal/v15/sqlite3/storage.ide-shm
+.vs/StudentPortal/v15/Server/sqlite3/storage.ide-shm
+.vs/StudentPortal/v16/.suo

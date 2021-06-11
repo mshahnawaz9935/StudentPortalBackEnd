@@ -139,6 +139,7 @@ C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\Stud
 C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.dll
 C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.pdb
 C:\Users\MOHAMMAD\Documents\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.Migrations.Photos.resources
+<<<<<<< HEAD
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\malam\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
@@ -422,3 +423,5 @@ C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\bin\Mic
 C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.csproj.CoreCompileInputs.cache
 C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.csproj.CopyComplete
 C:\Users\MOHAMMAD\Documents\GitHub\StudentPortalBackEnd\StudentPortalAPI\obj\Debug\StudentPortalAPI.csprojAssemblyReference.cache
+=======
+>>>>>>> parent of a919dec (updates)
